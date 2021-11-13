@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+  --ff-primary: "Barlow Semi Condensed", sans-serif;
+  --clr-mod-violet: hsl(263, 55%, 52%);
+  --clr-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-blackish-blue: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 13px;
+  font-family: var(--ff-primary);
+  background: var(--clr-light-grayish-blue);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Start of Generic Classes */
+.quotes {
+  width: 90%;
+  margin-top: 4rem; /* change this to auto in desktop otherwise it may cause shit to happen */
+  margin-bottom: 4rem;
+}
+
+.quote-card {
+  background-color: var(--clr-mod-violet);
+  border-radius: 0.5rem;
+  padding: 2rem 2rem;
+  margin-bottom: 1.8rem;
+}
+
+.quote-header {
+  display: flex;
+  align-items: center;
+}
+
+.quote-img {
+  border-radius: 50%;
+  border: 2px solid pink;
+  max-height: 40px;
+}
+.quote-name {
+  margin-left: 1.1rem;
+}
+
+.quote-name h1 {
+  font-size: 1rem;
+}
+
+.quote-name p {
+  opacity: 0.5;
+}
+
+.quote-text {
+  margin-top: 1rem;
+}
+
+.quote-text h1 {
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.quote-text p {
+  opacity: 0.7;
+  font-size: 13px;
+}
+
+/* End of Generic Quote Classes */
+
+.main-quote {
+  background-image: url(./images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 90% 0%;
+  color: var(--clr-white);
+}
+
+/* Quote by Jonathan */
+.quote-jonathan {
+  background: var(--clr-dark-grayish-blue);
+  color: var(--clr-white);
+}
+
+/* Quote by Jeanette */
+.quote-jeanette {
+  background: var(--clr-white);
+}
+
+/* Quote by Patrick */
+.quote-patrick {
+  background: var(--clr-blackish-blue);
+  color: var(--clr-white);
+}
+
+/* Quote by Kira */
+.quote-kira {
+  color: var(--clr-dark-grayish-blue);
+  background: var(--clr-white);
+  box-shadow: 4px 3px 1rem rgb(0 0 0 / 10%);
+}
+
+/* Media Query */
+@media screen and (min-width: 768px) {
+  .quotes {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+  }
+  .quotes {
+    width: 75%;
+    display: grid;
+    column-gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .main-quote {
+    grid-column: span 2;
+  }
+
+  .quote-jeanette {
+    grid-row-start: 2;
+  }
+
+  .quote-patrick {
+    grid-column: span 2;
+  }
+
+  .quote-kira {
+    grid-column-start: 4;
+    grid-row: 1/3;
+  }
+}
